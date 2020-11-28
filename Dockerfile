@@ -31,8 +31,10 @@ RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2
 RUN unzip awscliv2.zip
 RUN ./aws/install
 
-RUN R -e "install.packages('devtools')"
-RUN R -e "install.packages('tidyverse')"
-RUN R -e "install.packages('glue')"
-RUN R -e "install.packages('cli')"
-RUN R -e "install.packages('shinydashboard')"
+COPY renv.lock /renv.lock
+RUN R -e "install.packages('renv')"
+RUN R -e "renv::consent(provided=TRUE)"
+RUN R -e "renv::init()"
+
+COPY ./ndexrhome_0.0.0.9000.tar.gz /ndexrhome.tar.gz
+RUN R CMD INSTALL ndexrhome.tar.gz
