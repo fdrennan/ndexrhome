@@ -3,7 +3,7 @@ library(ndexrhome)
 skin <- Sys.getenv("DASHBOARD_SKIN")
 skin <- tolower(skin)
 if (skin == "") {
-  skin <- "blue"
+  skin <- "green"
 }
 
 
