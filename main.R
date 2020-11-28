@@ -1,3 +1,5 @@
+system('R CMD INSTALL ndexr.tar.gz')
+
 library(ndexrhome)
 
 APPLICATION='SHINY' # 'SHINY', 'PLUMBER', 'SCRIPT'

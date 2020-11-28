@@ -24,8 +24,15 @@ RUN apt-get update --allow-releaseinfo-change -qq && apt-get install -y \
     libssh2-1-dev \
     texlive \
     unzip \
-    curl
+    curl \
+    libgit2-dev
 
 RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
 RUN unzip awscliv2.zip
 RUN ./aws/install
+
+RUN R -e "install.packages('devtools')"
+RUN R -e "install.packages('tidyverse')"
+RUN R -e "install.packages('glue')"
+RUN R -e "install.packages('cli')"
+RUN R -e "install.packages('shinydashboard')"
