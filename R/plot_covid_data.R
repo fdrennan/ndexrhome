@@ -2,9 +2,8 @@
 #'
 #' @export plot_covid_data
 plot_covid_data <- function() {
-
   parse_covid_data <- function() {
-    covid_data <- read_csv('https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv')
+    covid_data <- read_csv("https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv")
     covid_data
   }
 
@@ -18,6 +17,5 @@ plot_covid_data <- function() {
   ggplot(covid_states) +
     aes(x = date, y = cases) +
     geom_line() +
-    facet_wrap(~ state, scales = 'free_y')
-
+    facet_wrap(~state, scales = "free_y")
 }
