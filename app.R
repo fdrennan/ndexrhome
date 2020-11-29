@@ -1,15 +1,27 @@
 library(ndexrhome)
 
-
-
-ui <- fluidPage(
-  fira_header(),
-  headerPanel("ndexr"),
-  sidebarLayout(
-    sidebarPanel(),
-    mainPanel(
-      webpage_ui(id = "webpage"),
-      htmlOutput("table")
+ui <- dashboardPage(
+  # fira_header(),
+  dashboardHeader(title = "ndexr"),
+  dashboardSidebar(
+    sidebarMenu(
+      menuItem("README", tabName = "readme", icon = icon("info")),
+      menuItem("Widgets", tabName = "widgets", icon = icon("th"))
+    )
+  ),
+  dashboardBody(
+    tabItems(
+      tabItem(
+        tabName = "readme",
+        fluidRow(includeMarkdown("README.md"))
+      ),
+      tabItem(
+        tabName = "widgets",
+        fluidRow(
+          webpage_ui(id = "webpage"),
+          htmlOutput("table")
+        )
+      )
     )
   )
 )

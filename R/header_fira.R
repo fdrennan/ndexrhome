@@ -6,7 +6,7 @@ fira_header <- function() {
     tags$style(HTML("
       @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@100;200&display=swap');
 
-      h1 {
+      h1, h2, h3, h4 {
         font-family: 'Fira Sans', sans-serif;
         font-weight: 500;
         line-height: 1.1;
