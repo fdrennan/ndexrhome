@@ -13,7 +13,9 @@ ui <- dashboardPage(
     tabItems(
       tabItem(
         tabName = "readme",
-        fluidRow(includeMarkdown("README.md"))
+        fluidRow(
+          box(includeMarkdown("README.md"), width = 12)
+        )
       ),
       tabItem(
         tabName = "widgets",
