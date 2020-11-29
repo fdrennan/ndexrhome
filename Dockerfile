@@ -36,5 +36,5 @@ RUN R -e "install.packages('renv')"
 RUN R -e "renv::consent(provided=TRUE)"
 RUN R -e "renv::init()"
 
-COPY ./ndexrhome_0.0.0.9000.tar.gz /ndexrhome.tar.gz
+COPY ./ndexrhome_1.0.0.tar.gz /ndexrhome.tar.gz
 RUN R CMD INSTALL ndexrhome.tar.gz

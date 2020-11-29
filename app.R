@@ -34,9 +34,10 @@ csvFileServer <- function(id, stringsAsFactors) {
       # The user's data, parsed into a data frame
       dataframe <- reactive({
         read.csv(userFile()$datapath,
-                 header = input$heading,
-                 quote = input$quote,
-                 stringsAsFactors = stringsAsFactors)
+          header = input$heading,
+          quote = input$quote,
+          stringsAsFactors = stringsAsFactors
+        )
       })
 
       # We can run observers in here if we want to
